@@ -1,0 +1,25 @@
+[
+    {
+      "id": 1,
+      "title": "Web Development Bootcamp",
+      "shortDescription": "Explore academic and professional excellence through mentorship and workshops, both virtual and in-person. Our organization supports newcomers with guidance on ESL, GED, trade school and higher education. Delve into diverse career paths with our GSA Speaker Series, helping you make informed decisions about your career. We inspire the younger generation to envision the long-term benefits of education. Learn more below.",
+  
+      "image": "https://images.squarespace-cdn.com/content/v1/6601481271f5447d2ae6c7eb/273addc2-7a85-47ba-b00a-963118a267b6/IMG_8408.jpg?format=1000w"
+    },
+    {
+      "id": 2,
+      "title": "Data Science Mastery",
+      "shortDescription": "GSA invites professionals at all career stages – from recent graduates to seasoned experts. Our mission is to build a strong network of Guinean and African professionals, dedicated to mutual support, knowledge exchange, and inspiring our student members. Learn more below.",
+      
+      "image": "https://images.squarespace-cdn.com/content/v1/6601481271f5447d2ae6c7eb/3b6b2eea-5680-4984-b23e-f0cfda4b4be0/IMG-7758.jpg?format=750w"
+    },
+    {
+      "id": 3,
+      "title": "Digital Marketing Strategy",
+      "shortDescription": "Join our events to expand your network, connect with like-minded professionals, and explore collaboration opportunities. Build lasting connections and stay engaged with your community",
+    
+      "image": "https://images.squarespace-cdn.com/content/v1/6601481271f5447d2ae6c7eb/11a6aefe-f240-467c-a6ef-bf8e5fbb2118/IMG_2783.JPG?format=750w"
+    }
+  
+  ]
+  

@@ -1,0 +1,70 @@
+
+   [
+      {
+        "id": 1,
+        "type": "executiveBoard",
+        "photo": "https://images.squarespace-cdn.com/content/v1/6601481271f5447d2ae6c7eb/db494157-fc09-49e0-b21d-a19b27e893b4/Professional+photo.jpg?format=750w",
+        "position": "President",
+        "name": "LAYE OUMAR KOULIBALY",
+        "description": "Oumar Koulibaly serves as the President of Guineans Succeeding in America (GSA). He holds a Bachelor’s Degree in Accountancy and a Master’s in Information Systems from Baruch College - Zicklin School of Business. Throughout his academic journey, Oumar actively participated in various campus organizations such as the Guinean Students Association, where he served as the Treasurer and subsequently as the Vice President. He was also a member of the National Association of Black Accountants (NABA) chapter at Baruch, Search for Education, Elevation and Knowledge (SEEK), Bridge to Baruch (B2B), and others, all focused on enhancing his leadership and academic skills and expanding his network. Oumar's internships at renowned firms including PwC, JPMorgan and BDO have equipped him with valuable skills and experience that led him to his current role as an Assurance professional at PwC, focused on companies in the Financial Services industry. He is committed to fostering a community of well-connected students and professionals who can support each other in their academic and career endeavors. Oumar is passionate about sharing his insights and learning from others. In his leisure time, he enjoys exercising and spending time with friends and family."
+      },
+      {
+        "id": 2,
+        "type": "executiveBoard",
+        "photo": "https://images.squarespace-cdn.com/content/v1/6601481271f5447d2ae6c7eb/54e82dfa-a08f-409f-93f7-038801d6f54e/Djenabou+Diallo+-+Vice+President.jpg?format=750w",
+        "position": "Vice President",
+        "name": "DJENABOU DIALLO",
+        "description": "Djenabou Diallo serves as Vice President of Guineans Succeeding in America. She currently works as an Analyst at BlackRock where she works in the Global Trade Surveillance and Analytics team. She received her Bachelor of Business Administration in Corporate Communications with a minor in Political Science at Baruch College. During her undergraduate years at Baruch, she worked as a Global Solutions and Sales intern at MasterCard and as a Business Management intern at Macy's. Additionally, she served as Secretary of Baruch’s Guinean Students Association chapter. Outside of work and school, she enjoys watching docuseries and learning about emerging technologies."
+      },
+     
+      {
+        "id": 3,
+        "type": "executiveBoard",
+        "photo": "https://images.squarespace-cdn.com/content/v1/6601481271f5447d2ae6c7eb/02e5f69d-d817-4345-87ab-0fce70a2ecf0/Isatou+Batchilly%2C+Com+and+Marketing+Committee+Member.jpg?format=750w",
+        "position": "Finance Director",
+        "name": "ISATOU BATCHILLY",
+        "description": "Isatou serves as the Director of Finance at Guineans Succeeding in America. She recently graduated from Baruch College with a BA in Political Science and Economics and was awarded the Morton Wollman Award for Outstanding Achievement in Political Science. She currently works as a Management Consulting Analyst at Accenture. During her undergraduate studies, Isatou interned at Pfizer as a Summer Legal Intern in the emerging markets division, where she worked on projects relating to the African Union, Latin America, and other emerging markets. Additionally, she interned at the office of the Speak of New York State Assembly and was also a field organizer at the Diallo for Bronx City Council Campaign. Isatou is an aspiring lawyer and AI enthusiast and hopes to leverage her skills to empower marginalized and underrepresented communities. When not working, she enjoys spending time with friends, learning new skills, exercising, or exploring around."
+      },
+      {
+        "id": 4,
+        "type": "executiveBoard",
+        "photo": "https://images.squarespace-cdn.com/content/v1/6601481271f5447d2ae6c7eb/578ff978-3632-480a-9d62-f5c3da6b2c1b/Mariama+Kema.jpeg?format=750w",
+        "position": "Mentorship Director",
+        "name": "MARIAMA KEMA TOURE",
+        "description": "Mariama Kema Toure serves as the Mentorship Director of Guineans Succeeding in America (GSA). She holds a Bachelor’s Degree in Industrial & Systems Engineering and a Master’s in Engineering Management from Oakland University (OU). Throughout her academic journey, Mariama actively participated in and led various organizations focused on mentorship, leadership, and community building. As the founder and president of the African Student Union, Mariama created a space for African students to excel—a legacy that continues today. She also served as Vice President of BuildOn, a nonprofit empowering youth to serve their communities and build schools in underserved countries. Additionally, she was active in the Society of Women in Engineering (SWE) and the National Society of Black Engineers (NSBE). Mariama’s passion for mentorship began as a mentee in the CORE Ambassador Program through the Center for Multicultural Initiatives (CMI) at OU. She later became a mentor, providing guidance on academics, career planning, and leadership development. Currently, Mariama is an Engineering Program Manager at L3Harris Technologies, an aerospace and defense company. She is dedicated to fostering a supportive community within GSA, empowering students and professionals to achieve their goals. In her personal time, Mariama enjoys exercising, traveling, learning new languages, reading, and spending quality time with family and friends."
+      },
+      {
+        "id": 5,
+        "type": "executiveBoard",
+        "photo": "https://images.squarespace-cdn.com/content/v1/6601481271f5447d2ae6c7eb/34a8b817-f74a-4356-ac32-7a95dfba8d69/Boussouriou+IT+Director.jpg?format=750w",
+        "position": "Information Technology Director",
+        "name": "MAMADOU B. DIALLO",
+        "description": "Mamadou Diallo serves as the Information Technology (IT) Director for Guineans Succeeding in America. He received his Bachelor of Science in Information Systems Management at New York University. He also received his Associate of Science in Computer Information Systems at Borough of Manhattan Community College (BMCC). He is an Analyst Software Engineer at Bank of America and also worked as an Assistant Project Manager at Here to Here. During his undergraduate years at NYU, he received the Dean Scholar Award and interned as a Software Engineer at Bank of America. Additionally, he served as Vice President and President of BMCC’s Guinean Students Association chapter."
+      },
+      {
+        "id": 6,
+        "type": "boardOfDirectors",
+        "photo": "https://images.squarespace-cdn.com/content/v1/6601481271f5447d2ae6c7eb/dce9ec4e-1ba1-4f64-af02-10c1bd5e4280/Pathe.jpg?format=750w",
+        "position": "Chairman",
+        "name": "ABDOULAYE PATHE BARRY",
+        "description": "Abdoulaye Pathe Barry is a distinguished public servant with years of demonstrated leadership, community outreach, youth development, and mentoring. His extensive experience within the African community is marked by a steadfast commitment to resolving community issues. Currently serving as a Credit Risk Associate at Wells Fargo, Abdoulaye Barry has accumulated a wealth of professional experience, with notable roles at organizations such as YALDA, the International Commercial Bank, and BPMG. His academic journey includes a second bachelor’s degree in Finance-Economics from Baruch College, a Risk Management certificate from the International Business Management Institute, and a Public-Private Partnership certificate from the World Bank. Abdoulaye's academic roots trace back to the University of Kofi Annan, where he studied Finance and Economics. Abdoulaye Pathe Barry's leadership extends beyond his professional realm, as evidenced by his pivotal roles within the Guinean community in the USA. Currently serving as the Chairman of the Board of Directors for Guineans Succeeding in America (GSA), he has previously held positions such as External Communicator, Vice President, and President of the Guinean Students Association at Baruch College. Passionate about politics, Abdoulaye is an alumnus of the ARENA ACADEMY, where he honed his skills as an Organizing Director, Campaign Manager, and Data Campaign Director. This academy, dedicated to training and supporting the next generation of candidates and campaign staff, has played a crucial role in shaping his political engagement. Additionally, as the co-founder and Vice Chair of the Guinean New Generation Movement, Abdoulaye actively contributes to driving social justice and civic engagement. Originally from Guinea and now residing in the USA, Abdoulaye Pathe Barry's dedication to serving his community began in his homeland and continues to flourish in his adopted home. Beyond his professional and civic engagements, Abdoulaye harbors a deep passion for soccer and a keen interest in global economics."
+      },
+      {
+        "id": 7,
+        "type": "boardOfDirectors",
+        "photo": "https://images.squarespace-cdn.com/content/v1/6601481271f5447d2ae6c7eb/4470e1a8-d4a3-4c19-afb7-f0f8ead5637b/IMG_2808.JPG?format=1500w",
+        "position": "Vice Chair",
+        "name": "BERNADETTE SYLLA, MD",
+        "description": "Dr. Bernadette Sylla, originally from Guinea, West Africa, embarked on an extraordinary journey that showcases the power of passion, perseverance, and purpose. After earning her medical degree from St. George's University, she completed her residency and Chief residency at Goryeb Children's Hospital. During this time, her deep interest in pediatric global health led her to complete the global health tract, demonstrating her dedication to making a difference on a global scale. Currently serving as a Pediatric Hospitalist at Goryeb Children's Hospital, Dr. Bernadette Sylla not only provides acute care to young patients but also spearheads the non-profit organization, Thee Bee Project. This organization aims to assist disadvantaged women and children in Guinea, emphasizing her commitment to improving the lives of those in need. Driven by a passion for child education and welfare, she has become a vocal advocate for these causes. She has also lead and participated in many non-profit organizations aimed at uplifting the Guinean Community in the United States including Guineans Succeeding in America . With a career goal of becoming a global health practitioner, Dr. Bernadette Sylla is poised to make an even greater impact on the world, leaving a lasting legacy of compassion and dedication."
+      },
+      {
+        "id": 8,
+        "type": "boardOfDirectors",
+        "photo": "https://images.squarespace-cdn.com/content/v1/6601481271f5447d2ae6c7eb/b522ea76-294f-42cc-a4da-aad6c4df25de/Abdourahamane.jpg?format=750w",
+        "position": "Founder/Board Member",
+        "name": "ABDOURAHAMANE DIALLO",
+        "description": "Abdourahamane Diallo, a highly esteemed individual, holds significant influence in the African community in New York. With a diverse academic background and a decade of demonstrated leadership experience, Diallo is a distinguished public servant committed to addressing community challenges. As a trained economist and geopolitical strategist, Diallo currently serves as a geopolitical and macroeconomic scenario designer at Morgan Stanley. His professional experience includes esteemed positions at BlackRock Inc., the US Department of Commerce, JP Morgan Chase, the US Department of Census, and Aster Impact. Diallo's academic journey includes a bachelor's degree in finance and investment from Baruch College, a Leadership and Strategy Impact Certificate from Columbia University, as well as law studies at La Source University and political science at John Jay College. Notably, he was the first Guinean American and Baruch student to receive the prestigious Schwarzman Scholars fellowship at Tsinghua University, where he obtained a Master's in Global Affairs focused on poverty alleviation. Aside from his professional achievements, Diallo has made a significant impact through his relentless dedication to his community. He is the founder of Guineans Succeeding in America (GSA) and established the Guinean New Generation Movement (GNGM) to drive social justice and civic engagement. Furthermore, he co-founded and serves as the Director of Community Development for the African Empowerment Project in New York City. Diallo's commitment to public service is evident through his involvement in various leadership positions. He previously held the position of General Secretary on Bronx Borough President Ruben Diaz Jr.'s African Advisory Council, where he advocated for the needs and progress of the African community. In 2018, he was appointed to Bronx Community Board 3, and subsequently, in 2020, he was elected to the Bronx Democratic Party County Committee for District 79th, further solidifying his dedication to public service. His exceptional dedication, impact, and influence have earned him a well-deserved place among the esteemed Bronx Power List of 2023. Moreover, Influences Magazine has acknowledged him as one of the 50 most influential personalities in West and North Africa. This recognition is a testament to his remarkable contributions to the continent, particularly as a mentor to hundreds of young entrepreneurs and political leaders in the region. Originally from Guinea-Conakry, West Africa, Diallo's immigrant experience has fueled his drive to maximize his potential and uplift his community. He firmly believes in the value of positively impacting lives and embraces a life of service. Beyond his work, Diallo is multilingual, an avid soccer player, and holds a red belt in taekwondo. His efforts have set a precedent for future generations of young Africans striving to make a difference in their communities."
+      }
+    ]
+  
+  
