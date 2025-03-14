@@ -22,22 +22,58 @@ body.dark {
 
 }
 
+/* Define a custom property for the border angle */
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
+}
 
-@keyframes bubbleBounce {
+/* Animate the border by rotating the gradient */
+.animate-border {
+  animation: border-spin 2s linear infinite;
+}
+
+/* Keyframe for spinning the border */
+@keyframes border-spin {
   0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
+    --border-angle: 0deg;
   }
   100% {
-    transform: scale(1);
+    --border-angle: 360deg;
   }
 }
 
-.animate-bubble {
-  animation: bubbleBounce 3s infinite ease-in-out;
+.input-gradient-border {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #e2e8f0; /* Light gray text for contrast */
+  background: #0f172a; /* Dark blue-gray background */
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  
+  background-image: linear-gradient(#0f172a, #0f172a), /* Solid background */
+    conic-gradient(
+      from var(--border-angle, 0deg),
+      rgba(128, 0, 128, 0.4) 80%,  /* Lighter purple */
+      #8b5cf6 86%,                 /* Vibrant purple */
+      #9333ea 90%,                 /* Deep violet */
+      #8b5cf6 94%,                 /* Vibrant purple */
+      rgba(128, 0, 128, 0.4)       /* Lighter purple */
+    );
+
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  outline: none;
+  transition: background 0.3s ease;
 }
+
+
+
+
+
 
 :root {
   --background: oklch(1 0 0);

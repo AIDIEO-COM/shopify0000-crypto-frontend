@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import AnimatedBackground from "../ui/AnimatedBackground";
+import AnimatedBackground from "../ui/AnimatedBorderBox";
+import AnimatedBorderBox from "../ui/AnimatedBorderBox";
 
 const Banner = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -139,11 +140,12 @@ const Banner = () => {
         </p>
       </header>
       {/* 2 */}
-      <div className="mb-12  backdrop-blur-xl bg-white/5 p-6 rounded-2xl border border-white/10">
-        <h2 className="text-xl font-semibold text-purple-200 mb-4">
+      
+      <div className="mb-12 input-gradient-border animate-border  backdrop-blur-xl bg-white/5   p-6 rounded-2xl border border-white/10">
+        <h2 className="text-xl  font-semibold lg:p-8 text-purple-200 mb-4">
           SOL Price Chart (7 Days)
         </h2>
-        <div className="w-full relative">
+        <div className="w-full">
       
           <div className="flex items-center justify-center h-full">
             <div className="animate-pulse text-gray-400">Loading chart...</div>
@@ -170,6 +172,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
+      
       {/* 3 */}
     </div>
   );
