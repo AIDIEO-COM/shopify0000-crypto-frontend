@@ -7,7 +7,7 @@ const MainLayout = () => {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen overflow-x-hidden">
+      <main className="min-h-screen p-4 md:p-12 overflow-x-hidden">
         <ScrollToTop />
         <Outlet />
       </main>

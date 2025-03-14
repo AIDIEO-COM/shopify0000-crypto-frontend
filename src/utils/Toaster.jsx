@@ -1,4 +1,4 @@
-;
+
 import { Bounce, ToastContainer } from 'react-toastify';
 
 const ToastProvider = () => {
