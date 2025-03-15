@@ -1,10 +1,10 @@
 import BgAnimation from "@/components/ui/BgAnimation";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import  { useState } from "react";
+
 
 const CreateToken = () => {
   const [imagePreview, setImagePreview] = useState(null);
-  const navigate = useNavigate();
+ 
 
   // Handle image file selection and create a preview
   const handleImageChange = (e) => {
