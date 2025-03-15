@@ -8,6 +8,8 @@
 
 body {
   font-family: "Poppins", serif;
+  background: #0c0620;
+
   
 }
 /* Default light theme */
@@ -21,6 +23,9 @@ body.dark {
   background: #0c0620;
 
 }
+/* .recharts-cartesian-axis-tick-value{
+background-color: #A78BFA !important;
+} */
 
 /* Define a custom property for the border angle */
 @property --border-angle {
@@ -196,3 +201,22 @@ body.dark {
 .animate-spin-slow {
   animation: 3s linear 0s infinite normal none running spin;
 }
+@keyframes floating {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-30px) translateX(30px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.8;
+  }
+}
+
+.animate-floating {
+  animation: floating infinite ease-in-out alternate;
+}
+
