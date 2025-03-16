@@ -27,7 +27,7 @@ const FloatingCrypto = () => {
     const fetchCryptoData = async () => {
       try {
         const response = await fetch(
-          "https://frontend-api-v3.pump.fun/coins?meta=solana&includeNsfw=true&x_cg_demo_api_key=CG-hug1nT2kpVQ8MMbfQDFu4NeK"
+          "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&category=solana-meme-coins&x_cg_demo_api_key=CG-hug1nT2kpVQ8MMbfQDFu4NeK"
         );
         const data = await response.json();
         setCryptoData(data);
