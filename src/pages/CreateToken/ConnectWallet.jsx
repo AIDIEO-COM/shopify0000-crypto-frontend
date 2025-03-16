@@ -82,7 +82,7 @@ const ConnectWallet = () => {
               >
                 <span className="text-white font-medium">Solflare</span>
                 <img
-                  src="https://koinly.io/_next/image/?url=https%3A%2F%2Fd10leigxh71r1t.cloudfront.net%2F512x512%2F0660349ebe%2Fsolflare.png%2Fm%2F&amp;w=128&amp;q=75"
+                  src="https://cdn.prod.website-files.com/614c99cf4f23700c8aa3752a/6323b698c42eaa7561f81542_public.png"
                   alt="Solflare"
                   className="w-8 h-8"
                 />
