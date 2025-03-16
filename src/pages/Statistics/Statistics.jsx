@@ -5,7 +5,7 @@ const Statistics = () => {
     <main className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 z-10">
       <div className="bg-[#131B2E] p-6 rounded-lg shadow-lg" style={{ opacity: 1 }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-        
+
 
           {/* Token Performance Card */}
           <div
@@ -31,7 +31,7 @@ const Statistics = () => {
               <h3 className="text-xl font-bold text-blue-400">Token Performance</h3>
             </div>
             <div className="h-64 flex items-center justify-center text-blue-300/60">
-              Chart coming soon
+              You haven’t created any coin 🙁
             </div>
           </div>
 
@@ -60,7 +60,7 @@ const Statistics = () => {
               <h3 className="text-xl font-bold text-blue-400">Token Distribution</h3>
             </div>
             <div className="h-64 flex items-center justify-center text-blue-300/60">
-              Chart coming soon
+              You haven’t created any coin 🙁
             </div>
           </div>
 
@@ -88,7 +88,7 @@ const Statistics = () => {
               <h3 className="text-xl font-bold text-blue-400">Token Analytics</h3>
             </div>
             <div className="h-64 flex items-center justify-center text-blue-300/60">
-              Chart coming soon
+              You haven’t created any coin 🙁
             </div>
           </div>
         </div>

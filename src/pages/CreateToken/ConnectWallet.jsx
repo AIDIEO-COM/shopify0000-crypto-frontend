@@ -7,7 +7,7 @@ const ConnectWallet = () => {
 
   const handleWalletClick = (wallet) => {
     setIsModalOpen(false);
-    setErrorMessage(`${wallet} wallet not found. Please install ${wallet} wallet.`);
+    setErrorMessage(`Access Denied: Upgrade Required!`);
   };
 
   return (
