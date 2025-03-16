@@ -9,12 +9,7 @@ const bgColors = [
   "bg-teal-500",
 ];
 
-const formatMarketCap = (value) => {
-  if (value >= 1_000_000_000) return `$${(value / 1_000_000_000).toFixed(2)}B`;
-  if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(2)}M`;
-  if (value >= 1_000) return `$${(value / 1_000).toFixed(2)}K`;
-  return `$${value.toFixed(2)}`;
-};
+const formatter = new Intl.NumberFormat("en", { notation: "compact" });
 
 const FloatingCrypto = () => {
   const [cryptoData, setCryptoData] = useState([]);
@@ -69,7 +64,7 @@ const FloatingCrypto = () => {
       style={{ transform: `translate(${shakeX}px, ${shakeY}px)` }}
     >
       <span>{currentCrypto.symbol}</span> hit{" "}
-      {currentCrypto.market_cap} market cap 🔥
+      {formatter.format(currentCrypto.market_cap)} market cap 🔥
     </div>
   );
 };

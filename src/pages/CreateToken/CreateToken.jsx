@@ -37,6 +37,7 @@ const CreateToken = () => {
         >
           <div className="max-w-2xl mx-auto">
             <form
+             onSubmit={(e) => e.preventDefault()}
               className="space-y-6 bg-[#0A0F1E] rounded-2xl p-8 border border-[#1E2334]"
               style={{ opacity: 1, transform: "none" }}
             >
@@ -155,8 +156,9 @@ const CreateToken = () => {
                 </div>
               </div>
               <button
+              type="button"
               onClick={() => navigate('/dashboard/create-token/connect-wallet')}
-                type="submit"
+                
                 className="w-full cursor-pointer py-3 px-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:from-purple-600 hover:to-pink-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Create Token
