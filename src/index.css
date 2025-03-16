@@ -230,3 +230,16 @@ background-color: #A78BFA !important;
     opacity: 0;
   }
 }
+
+@keyframes slowPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.slow-pulse {
+  animation: slowPulse 3s infinite;
+}

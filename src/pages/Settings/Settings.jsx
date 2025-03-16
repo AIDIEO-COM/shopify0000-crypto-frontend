@@ -46,7 +46,7 @@ const Settings = () => {
 
     <main className="relative text-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 z-10">
 
-      <div className="bg-[#131B2E] p-6 rounded-lg shadow-lg">
+      <div className="bg-[#131B2E] md:p-6 rounded-lg shadow-lg">
         <div className="max-w-2xl mx-auto p-6 min-h-screen flex flex-col relative">
           <div className="relative z-10">
             <div className="flex items-center mb-6">

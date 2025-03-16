@@ -32,7 +32,7 @@ const Navbar = () => {
           <h1 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] bg-clip-text text-transparent">
             RugRader PRO
           </h1>
-          <div className={`${location.pathname === "/dashboard" ? "hidden" : ""} flex fixed z-50 top-5 left-[45%] justify-center my-6`}>
+          <div className={`${location.pathname === "/dashboard" ? "hidden" : ""} flex fixed z-50 top-5 left-[30%] md:left-[45%] justify-center my-6`}>
             <button
               onClick={() => navigate('/dashboard')} // Navigate to dashboard
               className="px-4 py-2 cursor-pointer rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:from-purple-600 hover:to-pink-600"

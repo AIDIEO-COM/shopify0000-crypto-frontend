@@ -1,5 +1,5 @@
 
-import React, { useRef, useEffect } from 'react';
+import  { useRef, useEffect } from 'react';
 
 const BgAnimation_2 = () => {
   const canvasRef = useRef(null);

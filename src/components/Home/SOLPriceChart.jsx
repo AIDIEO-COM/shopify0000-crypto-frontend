@@ -47,7 +47,7 @@ const SOLPriceChart = () => {
       <h2 className="text-xl font-semibold lg:p-8 text-purple-200 mb-4">
         SOL Price Chart (7 Days)
       </h2>
-      <div className="w-full px-12  h-[300px]">
+      <div className="w-full lg:px-12  h-[300px]">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={data}
