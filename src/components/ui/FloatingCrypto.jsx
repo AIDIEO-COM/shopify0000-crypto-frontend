@@ -59,13 +59,20 @@ const FloatingCrypto = () => {
   const currentCrypto = cryptoData[currentIndex];
 
   return (
-    <div
-      className={`fixed bottom-2 z-50 text-sm left-1/2 transform -translate-x-1/2 ${bgColor} text-white text-nowrap px-8 py-1`}
-      style={{ transform: `translate(${shakeX}px, ${shakeY}px)` }}
-    >
-      <span>{currentCrypto.symbol}</span> hit{" "}
-      {formatter.format(currentCrypto.market_cap)} market cap 🔥
+
+    <div className="fixed bottom-4 z-50 left-1/2 transform -translate-x-1/2">
+      <div className={`w-max py-1  px-6 rounded-md shadow-lg ${bgColor} flex items-center space-x-4`}>
+        <div className="text-2xl">
+          <span>{crypto.icon}</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <span>{currentCrypto.symbol}</span> hit{" "}
+          {formatter.format(currentCrypto.market_cap)} market cap 🔥
+        </div>
+      </div>
     </div>
+
+
   );
 };
 
