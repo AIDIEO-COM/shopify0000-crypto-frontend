@@ -65,7 +65,7 @@ const FloatingCrypto = () => {
 
   return (
     <div
-      className={`fixed bottom-2 z-50 text-sm left-1/2 transform -translate-x-1/2 ${bgColor} text-white px-8 py-1`}
+      className={`fixed bottom-2 z-50 text-sm left-1/2 transform -translate-x-1/2 ${bgColor} text-white text-nowrap px-8 py-1`}
       style={{ transform: `translate(${shakeX}px, ${shakeY}px)` }}
     >
       <span>{currentCrypto.symbol}</span> hit{" "}
