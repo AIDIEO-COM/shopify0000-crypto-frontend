@@ -7,6 +7,7 @@ const bgColors = [
   "bg-red-500",
   "bg-green-500",
   "bg-teal-500",
+  "bg-blue-300",
 ];
 
 const formatter = new Intl.NumberFormat("en", { notation: "compact" });
@@ -15,6 +16,7 @@ const FloatingCrypto = () => {
   const [cryptoData, setCryptoData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [bgColor, setBgColor] = useState(bgColors[0]);
+  const [visible, setVisible] = useState(false); // Controls toast visibility
 
   const previousIndexRef = useRef(0);
   const cryptoCache = useRef(null);
@@ -36,7 +38,6 @@ const FloatingCrypto = () => {
           "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&category=solana-meme-coins&x_cg_demo_api_key=CG-hug1nT2kpVQ8MMbfQDFu4NeK"
         );
         const data = await response.json();
-        console.log(data)
         cryptoCache.current = data;
         setCryptoData(data);
       } catch (error) {
@@ -51,17 +52,22 @@ const FloatingCrypto = () => {
     if (cryptoData.length === 0) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
-        let newIndex = getRandomExcluding(prevIndex, cryptoData.length - 1);
-        if (newIndex !== previousIndexRef.current) {
-          previousIndexRef.current = newIndex;
-          return newIndex;
-        }
-        return prevIndex;
-      });
+      setVisible(false); // Start fade-out effect
 
-      setBgColor(bgColors[Math.floor(Math.random() * bgColors.length)]);
-    }, 400);
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => {
+          let newIndex = getRandomExcluding(prevIndex, cryptoData.length - 1);
+          if (newIndex !== previousIndexRef.current) {
+            previousIndexRef.current = newIndex;
+            return newIndex;
+          }
+          return prevIndex;
+        });
+
+        setBgColor(bgColors[Math.floor(Math.random() * bgColors.length)]);
+        setVisible(true); // Show new toast
+      }, 400); // Wait for fade-out before changing
+    }, 1000); // Change every 2s
 
     return () => clearInterval(interval);
   }, [cryptoData]);
@@ -75,10 +81,12 @@ const FloatingCrypto = () => {
   if (!currentCrypto) return null;
 
   return (
-    <div className="fixed bottom-4 z-50 left-1/2 transform -translate-x-1/2">
-      <div className={`w-max py-1 px-6 rounded-md shadow-lg ${bgColor} flex items-center space-x-4 shake-effect`}>
-
-        <div className="">
+    <div
+      className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-400 transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+        }`}
+    >
+      <div className={`w-max py-2 px-5 rounded-md shadow-lg ${bgColor} flex items-center space-x-4`}>
+        <div>
           <span className="capitalize">{currentCrypto.symbol}</span> {" "} hit {" "}
           {formatter.format(Math.floor(Math.random() * (10_000_000 - 500_000 + 1)) + 500_000)} market cap 🔥
         </div>

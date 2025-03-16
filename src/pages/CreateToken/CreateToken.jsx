@@ -6,10 +6,12 @@ import { useNavigate } from "react-router-dom";
 const CreateToken = () => {
   const [imagePreview, setImagePreview] = useState(null);
   const navigate = useNavigate()
+  const [error,setError] = useState('')
  
 
   // Handle image file selection and create a preview
   const handleImageChange = (e) => {
+    setError('')
     const file = e.target.files[0];
     if (file) {
       const fileUrl = URL.createObjectURL(file);
@@ -27,6 +29,16 @@ const CreateToken = () => {
     setImagePreview(null);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(!imagePreview){
+      setError('Please upload an image')
+      return
+    }
+    navigate('/dashboard/create-token/connect-wallet')
+   
+  }
+
   return (
     <>
       <BgAnimation />
@@ -37,7 +49,7 @@ const CreateToken = () => {
         >
           <div className="max-w-2xl mx-auto">
             <form
-             onSubmit={(e) => e.preventDefault()}
+             onSubmit={handleSubmit}
               className="space-y-6 bg-[#0A0F1E] rounded-2xl p-8 border border-[#1E2334]"
               style={{ opacity: 1, transform: "none" }}
             >
@@ -51,6 +63,7 @@ const CreateToken = () => {
                     type="text"
                     className="w-full px-4 py-2 bg-[#131B2E] border border-[#1E2334] rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
                     placeholder="My Token"
+                    required
                   />
                 </div>
                 <div>
@@ -61,6 +74,7 @@ const CreateToken = () => {
                     type="text"
                     className="w-full px-4 py-2 bg-[#131B2E] border border-[#1E2334] rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
                     placeholder="MTK"
+                    required
                   />
                 </div>
                 <div>
@@ -73,6 +87,7 @@ const CreateToken = () => {
                     min="0"
                     max="9"
                     defaultValue="9"
+                    required
                   />
                 </div>
                 <div>
@@ -84,6 +99,7 @@ const CreateToken = () => {
                     className="w-full px-4 py-2 bg-[#131B2E] border border-[#1E2334] rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
                     min="1"
                     defaultValue="1000000000"
+                    required
                   />
                 </div>
                 <div>
@@ -94,11 +110,14 @@ const CreateToken = () => {
                     className="w-full px-4 py-2 bg-[#131B2E] border border-[#1E2334] rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
                     rows="3"
                     placeholder="Describe your token..."
+              
                   ></textarea>
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-400 mb-1">
-                    Token Image
+                    Token Image {
+                      error && <span className="text-red-500">{error}</span>
+                    }
                   </label>
                   <input
                     type="file"
@@ -106,6 +125,7 @@ const CreateToken = () => {
                     accept="image/*"
                     className="hidden"
                     onChange={handleImageChange}
+            
                   />
                   <div
                     className="w-full h-40 bg-[#131B2E] border border-dashed border-[#1E2334] rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-[#1A2235] transition-colors relative"
@@ -156,8 +176,7 @@ const CreateToken = () => {
                 </div>
               </div>
               <button
-              type="button"
-              onClick={() => navigate('/dashboard/create-token/connect-wallet')}
+              type="submit"
                 
                 className="w-full cursor-pointer py-3 px-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:from-purple-600 hover:to-pink-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
