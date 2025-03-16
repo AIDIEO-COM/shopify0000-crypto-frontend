@@ -6,8 +6,10 @@ const bgColors = [
   "bg-orange-600",
   "bg-red-500",
   "bg-green-500",
-  "bg-teal-500",
-  "bg-blue-300",
+  "bg-teal-600",
+  "bg-blue-500",
+  "bg-indigo-600",
+  "bg-pink-600",
 ];
 
 const formatter = new Intl.NumberFormat("en", { notation: "compact" });
@@ -85,8 +87,8 @@ const FloatingCrypto = () => {
       className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-400 transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
         }`}
     >
-      <div className={`w-max py-2 px-5 rounded-md shadow-lg ${bgColor} flex items-center space-x-4`}>
-        <div>
+      <div className={`w-[80vw] md:w-[60vw] py-2 px-2 md:px-2 rounded-md shadow-lg ${bgColor} flex items-center space-x-4 flex-nowrap`}>
+        <div className="text-center w-full sm:text-sm">
           <span className="capitalize">{currentCrypto.symbol}</span> {" "} hit {" "}
           {formatter.format(Math.floor(Math.random() * (10_000_000 - 500_000 + 1)) + 500_000)} market cap 🔥
         </div>

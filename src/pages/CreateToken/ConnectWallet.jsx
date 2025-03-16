@@ -21,7 +21,7 @@ const ConnectWallet = () => {
                 Connect Your Wallet
               </h2>
               <div className="relative">
-                <button 
+                <button
                   className="flex cursor-pointer items-center space-x-2 px-4 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white hover:from-fuchsia-700 hover:to-pink-700 transition-all duration-200"
                   onClick={() => setIsModalOpen(true)}
                 >
@@ -57,7 +57,20 @@ const ConnectWallet = () => {
                 )}
               </div>
             </div>
+
+
           </div>
+        </div>
+
+        <div className=" flex justify-center my-12">
+          <a
+            href="https://t.me/anasfazal"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 text-white text-sm py-3 px-6 rounded-lg w-max mx-auto cursor-pointer transition-all duration-500 ease-in-out transform hover:scale-110 focus:outline-none focus:ring focus:ring-purple-300 slow-pulse hover:bg-gradient-to-r hover:from-blue-600 hover:via-purple-600 hover:to-blue-700"
+          >
+            Get Your Code
+          </a>
         </div>
       </div>
       {isModalOpen && (
@@ -65,7 +78,7 @@ const ConnectWallet = () => {
           <div className="bg-[#161B22] rounded-xl border border-fuchsia-500/20 p-6 w-full max-w-sm">
             <h3 className="text-xl font-bold text-white mb-4">Connect Wallet</h3>
             <div className="space-y-3">
-              <button 
+              <button
                 className="w-full cursor-pointer flex items-center justify-between p-4 rounded-lg bg-[#0D1117] hover:bg-[#1C2128] border border-fuchsia-500/20 transition-colors duration-200"
                 onClick={() => handleWalletClick("Phantom")}
               >
@@ -76,7 +89,7 @@ const ConnectWallet = () => {
                   className="w-8 h-8"
                 />
               </button>
-              <button 
+              <button
                 className="w-full cursor-pointer flex items-center justify-between p-4 rounded-lg bg-[#0D1117] hover:bg-[#1C2128] border border-fuchsia-500/20 transition-colors duration-200"
                 onClick={() => handleWalletClick("Solflare")}
               >
