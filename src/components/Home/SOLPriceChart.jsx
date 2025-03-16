@@ -20,10 +20,10 @@ const SOLPriceChart = () => {
         );
         const result = await response.json();
 
-       
-        const transformedData = result.prices?.slice(0 ,-1).map(([timestamp, price]) => ({
-          date:new Date(timestamp).getDate(),
-          price: parseFloat(price.toFixed(2)), 
+        let today = new Date().getDate() - 8;
+        const transformedData = result.prices?.map(([timestamp, price]) => ({
+          date: today++,
+          price: parseFloat(price.toFixed(2)),
         }));
 
         setData(transformedData);
@@ -36,8 +36,8 @@ const SOLPriceChart = () => {
   }, []);
 
   // Find min & max price for dynamic Y-axis
-  const minPrice =Math.min(...data.map((item) => item.price));
-  const maxPrice =Math.max(...data.map((item) => item.price));
+  const minPrice = Math.min(...data.map((item) => item.price));
+  const maxPrice = Math.max(...data.map((item) => item.price));
   const yTicks = Array.from({ length: 7 }, (_, i) =>
     (minPrice + ((maxPrice - minPrice) / 6) * i).toFixed(2)
   );

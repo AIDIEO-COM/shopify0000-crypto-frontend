@@ -1,51 +1,75 @@
 import { useEffect, useState } from "react";
 
-const cryptoList = [
-  { name: "Bitcoin", symbol: "btc", price: "$83953.00", icon: "₿" }, 
-  { name: "Solana", symbol: "sol", price: "$133.44", icon: "🌞" }, 
-  { name: "Bonk", symbol: "bonk", price: "$0.00", icon: "💥" }, 
-  { name: "Popcat", symbol: "popcat", price: "$0.19", icon: "🐱" }, 
-  { name: "MAGA", symbol: "trump", price: "$0.29", icon: "💥" }, 
+const bgColors = [
+  "bg-purple-600",
+  "bg-yellow-600",
+  "bg-orange-600",
+  "bg-red-500",
+  "bg-green-500",
+  "bg-teal-500",
 ];
 
-const multipliers = ["50x", "60x", "100x", "120x"];
-const bgColors = ["bg-purple-600", "bg-yellow-600", "bg-blue-600", "bg-red-500", "bg-green-500"];
-const textColors = ["text-white", "text-white", "text-white", "text-white"];
+const formatMarketCap = (value) => {
+  if (value >= 1_000_000_000) return `$${(value / 1_000_000_000).toFixed(2)}B`;
+  if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(2)}M`;
+  if (value >= 1_000) return `$${(value / 1_000).toFixed(2)}K`;
+  return `$${value.toFixed(2)}`;
+};
 
 const FloatingCrypto = () => {
-  const [crypto, setCrypto] = useState(cryptoList[0]);
-  const [multiplier, setMultiplier] = useState(multipliers[0]);
+  const [cryptoData, setCryptoData] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [bgColor, setBgColor] = useState(bgColors[0]);
-  const [textColor, setTextColor] = useState(textColors[0]);
+  const [shakeX, setShakeX] = useState(0);
+  const [shakeY, setShakeY] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const randomCrypto = cryptoList[Math.floor(Math.random() * cryptoList.length)];
-      const randomMultiplier = multipliers[Math.floor(Math.random() * multipliers.length)];
-      const randomBgColor = bgColors[Math.floor(Math.random() * bgColors.length)];
-      const randomTextColor = textColors[Math.floor(Math.random() * textColors.length)];
+    const fetchCryptoData = async () => {
+      try {
+        const response = await fetch(
+          "https://frontend-api-v3.pump.fun/coins?meta=solana&includeNsfw=true"
+        );
+        const data = await response.json();
+        setCryptoData(data);
+      } catch (error) {
+        console.error("Error fetching crypto data:", error);
+      }
+    };
 
-      setCrypto(randomCrypto);
-      setMultiplier(randomMultiplier);
-      setBgColor(randomBgColor);
-      setTextColor(randomTextColor);
-    }, 1000); 
-
-    return () => clearInterval(interval);
+    fetchCryptoData();
   }, []);
 
+  useEffect(() => {
+    if (cryptoData.length === 0) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % cryptoData.length);
+      setBgColor(bgColors[Math.floor(Math.random() * bgColors.length)]);
+    }, 600); // 100 times per minute
+
+    return () => clearInterval(interval);
+  }, [cryptoData]);
+
+  useEffect(() => {
+    const shakeInterval = setInterval(() => {
+      setShakeX(Math.random() * 35 - 2);
+      setShakeY(Math.random() * 0 - 2);
+    }, 100);
+
+    return () => clearInterval(shakeInterval);
+  }, []);
+
+  if (cryptoData.length === 0) return null;
+
+  const currentCrypto = cryptoData[currentIndex];
+
   return (
-    <div className="fixed bottom-2 z-50 left-1/2 transform -translate-x-1/2">
-      <div className={`w-max py-1  px-6 rounded-lg shadow-lg transition-all duration-500 ${bgColor} ${textColor} flex items-center space-x-4`}>
-        <div className="text-2xl">
-          <span>{crypto.icon}</span> 
-        </div>
-        <div className="flex items-center space-x-2">
-          <span>{crypto.name}</span>
-          <span className="text-sm">{crypto.price}</span>
-          <span className="text-sm">{multiplier} 🔥</span>
-        </div>
-      </div>
+    <div
+      className={`fixed bottom-2 z-50 text-sm left-1/2 transform -translate-x-1/2 ${bgColor} text-white px-8 py-1`}
+      style={{ transform: `translate(${shakeX}px, ${shakeY}px)` }}
+    >
+      <span>{currentCrypto.symbol}</span> hit{" "}
+      {currentCrypto.market_cap} market cap 🔥
     </div>
   );
 };

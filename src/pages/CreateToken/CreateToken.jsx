@@ -1,9 +1,11 @@
 import BgAnimation from "@/components/ui/BgAnimation";
 import  { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const CreateToken = () => {
   const [imagePreview, setImagePreview] = useState(null);
+  const navigate = useNavigate()
  
 
   // Handle image file selection and create a preview
@@ -153,8 +155,9 @@ const CreateToken = () => {
                 </div>
               </div>
               <button
+              onClick={() => navigate('/dashboard/create-token/connect-wallet')}
                 type="submit"
-                className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:from-purple-600 hover:to-pink-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full cursor-pointer py-3 px-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:from-purple-600 hover:to-pink-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Create Token
               </button>
@@ -166,4 +169,13 @@ const CreateToken = () => {
   );
 };
 
-export default CreateToken;
+export default CreateToken; 
+
+
+
+
+
+
+
+
+
