@@ -8,6 +8,9 @@ const ConnectWallet = () => {
   const handleWalletClick = (wallet) => {
     setIsModalOpen(false);
     setErrorMessage(`Access Denied: Upgrade Required!`);
+
+    // Remove and reapply the shake effect
+    // setTimeout(() => setErrorMessage(""), 400);
   };
 
   return (
@@ -44,7 +47,7 @@ const ConnectWallet = () => {
                   <span>Connect Wallet</span>
                 </button>
                 {errorMessage && (
-                  <div className="absolute top-full left-0 right-0 mt-2 p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
+                  <div className="absolute top-full left-0 right-0 mt-2 p-3 bg-red-500/10 border border-red-500/20 rounded-lg animate-shake">
                     <div className="flex items-center space-x-2 text-red-500">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-alert-circle w-5 h-5">
                         <circle cx="12" cy="12" r="10"></circle>

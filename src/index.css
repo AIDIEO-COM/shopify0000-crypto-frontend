@@ -10,12 +10,13 @@ body {
   font-family: "Poppins", serif;
   background: #0c0620;
 
-  
+
 }
+
 /* Default light theme */
 body.light {
   background: #1a202c;
- 
+
 }
 
 /* Dark theme */
@@ -23,6 +24,7 @@ body.dark {
   background: #0c0620;
 
 }
+
 /* .recharts-cartesian-axis-tick-value{
 background-color: #A78BFA !important;
 } */
@@ -44,9 +46,28 @@ background-color: #A78BFA !important;
   0% {
     --border-angle: 0deg;
   }
+
   100% {
     --border-angle: 360deg;
   }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  10% { transform: translateX(-5px); }
+  20% { transform: translateX(5px); }
+  30% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  50% { transform: translateX(-4px); }
+  60% { transform: translateX(4px); }
+  70% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+  90% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-shake {
+  animation: shake 1s ease-in-out; /* Increased duration from 0.3s to 1s */
 }
 
 .input-gradient-border {
@@ -54,19 +75,26 @@ background-color: #A78BFA !important;
   width: 100%;
   padding: 0.75rem 1rem;
   font-size: 1rem;
-  color: #e2e8f0; /* Light gray text for contrast */
-  background: #0f172a; /* Dark blue-gray background */
+  color: #e2e8f0;
+  /* Light gray text for contrast */
+  background: #0f172a;
+  /* Dark blue-gray background */
   border-radius: 0.5rem;
   border: 2px solid transparent;
-  
-  background-image: linear-gradient(#0f172a, #0f172a), /* Solid background */
-    conic-gradient(
-      from var(--border-angle, 0deg),
-      rgba(128, 0, 128, 0.4) 80%,  /* Lighter purple */
-      #8b5cf6 86%,                 /* Vibrant purple */
-      #9333ea 90%,                 /* Deep violet */
-      #8b5cf6 94%,                 /* Vibrant purple */
-      rgba(128, 0, 128, 0.4)       /* Lighter purple */
+
+  background-image: linear-gradient(#0f172a, #0f172a),
+    /* Solid background */
+    conic-gradient(from var(--border-angle, 0deg),
+      rgba(128, 0, 128, 0.4) 80%,
+      /* Lighter purple */
+      #8b5cf6 86%,
+      /* Vibrant purple */
+      #9333ea 90%,
+      /* Deep violet */
+      #8b5cf6 94%,
+      /* Vibrant purple */
+      rgba(128, 0, 128, 0.4)
+      /* Lighter purple */
     );
 
   background-origin: border-box;
@@ -194,22 +222,27 @@ background-color: #A78BFA !important;
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
+
 .animate-spin-slow {
   animation: 3s linear 0s infinite normal none running spin;
 }
+
 @keyframes floating {
   0% {
     transform: translateY(0) translateX(0);
     opacity: 0.2;
   }
+
   50% {
     transform: translateY(-30px) translateX(30px);
     opacity: 0.4;
   }
+
   100% {
     transform: translateY(0) translateX(0);
     opacity: 0.8;
@@ -225,6 +258,7 @@ background-color: #A78BFA !important;
     transform: translate(0, 0) scale(1);
     opacity: 1;
   }
+
   100% {
     transform: translate(calc(100vw - 100%), calc(100vh - 100%)) scale(0.5);
     opacity: 0;
@@ -232,9 +266,12 @@ background-color: #A78BFA !important;
 }
 
 @keyframes slowPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.7;
   }
