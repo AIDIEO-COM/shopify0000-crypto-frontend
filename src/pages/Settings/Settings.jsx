@@ -1,9 +1,10 @@
-import  { useState } from "react";
+
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Settings = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   const [isNotificationsOn, setIsNotificationsOn] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isConnectWallet, setIsConnectWallet] = useState(false);
@@ -12,27 +13,27 @@ const Settings = () => {
   const [solanaAddress, setSolanaAddress] = useState("");
   const [solAmount, setSolAmount] = useState("");
   console.log(isDarkMode);
-    const handleLogout = () => {
-      Swal.fire({
-        title: "Are you sure?",
-        text: "You will be logged out!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#d33",
-        cancelButtonColor: "#3085d6",
-        confirmButtonText: "Logout",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          navigate("/"); // Redirect to home after confirmation
-        }
-      });
-    };
+  const handleLogout = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Logout",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/"); // Redirect to home after confirmation
+      }
+    });
+  };
 
   const toggleNotifications = () => setIsNotificationsOn(!isNotificationsOn);
   const toggleDarkMode = (e) => {
-    e.stopPropagation()
-    setIsDarkMode(!isDarkMode)
-}
+    e.stopPropagation();
+    setIsDarkMode(!isDarkMode);
+  };
   const toggleConnectWallet = () => setIsConnectWallet(!isConnectWallet);
   const changeGasFee = (fee) => setGasFee(fee);
   const handleWithdraw = () => {
@@ -41,13 +42,16 @@ const Settings = () => {
   };
 
   return (
+    <>
+
     <main className="relative text-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 z-10">
+
       <div className="bg-[#131B2E] p-6 rounded-lg shadow-lg">
         <div className="max-w-2xl mx-auto p-6 min-h-screen flex flex-col relative">
           <div className="relative z-10">
             <div className="flex items-center mb-6">
               <svg
-              onClick={() =>  navigate('/dashboard')}
+                onClick={() => navigate("/dashboard")}
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -104,7 +108,10 @@ const Settings = () => {
                 </button>
               )}
             </div>
-            <div  onClick={toggleNotifications} className="bg-navy-800 cursor-pointer rounded-xl p-6 border border-blue-500/20 mb-4">
+            <div
+              onClick={toggleNotifications}
+              className="bg-navy-800 cursor-pointer rounded-xl p-6 border border-blue-500/20 mb-4"
+            >
               <div className="flex items-center space-x-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -122,40 +129,38 @@ const Settings = () => {
                   <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
                 </svg>
                 <div className="flex justify-between w-full items-center">
-                <div>
-                <h3 className="text-lg font-medium">Notifications</h3>
-                  <div className="flex items-center">
-                    <p>{isNotificationsOn ? "On" : "Off"}</p>
-                  
+                  <div>
+                    <h3 className="text-lg font-medium">Notifications</h3>
+                    <div className="flex items-center">
+                      <p>{isNotificationsOn ? "On" : "Off"}</p>
+                    </div>
                   </div>
-                </div>
-                <label className="ml-4 cursor-pointer flex items-center">
-                      <div className="relative">
-                        <input
-                          type="checkbox"
-                          checked={isNotificationsOn}
-                          onChange={(e) => {
-                            e.stopPropagation()
-                            toggleNotifications()
-                          }}
-                          className="hidden"
-                        />
-                        <div className={`toggle-switch w-12 h-6  rounded-full shadow-inner ${
-                              isNotificationsOn
-                                ? " bg-blue-500"
-                                : "bg-gray-400"
-                            }`}>
-                          <div
-                            className={`w-6 h-6 bg-white rounded-full shadow-md transition-all duration-300 ease-in-out ${
-                              isNotificationsOn
-                                ? "transform translate-x-6 bg-blue-500"
-                                : ""
-                            }`}
-                          ></div>
-                        </div>
+                  <label className="ml-4 cursor-pointer flex items-center">
+                    <div className="relative">
+                      <input
+                        type="checkbox"
+                        checked={isNotificationsOn}
+                        onChange={(e) => {
+                          e.stopPropagation();
+                          toggleNotifications();
+                        }}
+                        className="hidden"
+                      />
+                      <div
+                        className={`toggle-switch w-12 h-6  rounded-full shadow-inner ${
+                          isNotificationsOn ? " bg-blue-500" : "bg-gray-400"
+                        }`}
+                      >
+                        <div
+                          className={`w-6 h-6 bg-white rounded-full shadow-md transition-all duration-300 ease-in-out ${
+                            isNotificationsOn
+                              ? "transform translate-x-6 bg-blue-500"
+                              : ""
+                          }`}
+                        ></div>
                       </div>
-                     
-                    </label>
+                    </div>
+                  </label>
                 </div>
               </div>
             </div>
@@ -181,21 +186,20 @@ const Settings = () => {
                 </svg>
                 <div className="flex items-center justify-between w-full">
                   <div>
-                  
                     <h3 className="text-lg font-medium">Appearance</h3>
                     <div className="flex justify-between w-full items-center">
                       <p>{isDarkMode ? "Dark Mode" : "Light Mode"}</p>
                     </div>
                   </div>
-                  <label   className="ml-auto cursor-pointer flex items-center">
+                  <label className="ml-auto cursor-pointer flex items-center">
                     <div className="relative">
                       <input
                         type="checkbox"
                         onClick={(e) => {
-                            e.stopPropagation(); 
-                            toggleDarkMode();
-                          }}
-                        checked={isDarkMode} 
+                          e.stopPropagation();
+                          toggleDarkMode();
+                        }}
+                        checked={isDarkMode}
                         className="hidden"
                       />
                       <div
@@ -259,7 +263,10 @@ const Settings = () => {
               </div>
             </div>
 
-            <button onClick={handleLogout} className="mt-6  px-4 py-3 cursor-pointer bg-red-600 text-white flex w-full justify-center items-center  gap-2 rounded-xl">
+            <button
+              onClick={handleLogout}
+              className="mt-6  px-4 py-3 cursor-pointer bg-red-600 text-white flex w-full justify-center items-center  gap-2 rounded-xl"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -323,6 +330,7 @@ const Settings = () => {
         </div>
       )}
     </main>
+    </>
   );
 };
 

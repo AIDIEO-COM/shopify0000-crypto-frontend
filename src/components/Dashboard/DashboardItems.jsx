@@ -32,7 +32,7 @@ const dashboardItems = [
 const DashboardItems = () => {
     const navigate = useNavigate()
     return (
-        <div className="grid grid-cols-1 z-50 sm:grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto p-6">
+        <div className="grid grid-cols-2 z-50 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto lg:p-6">
         {dashboardItems.map((item, index) => (
           <button
           onClick={() => navigate(item.link)}

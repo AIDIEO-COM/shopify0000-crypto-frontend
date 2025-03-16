@@ -19,7 +19,7 @@ const Web = () => {
         
           <Route path="/dashboard/previous-tokens" element={<PreviousTokens />} />
           <Route path="/dashboard/statistics" element={<Statistics />} />
-          {/* <Route path="/dashboard/settings" element={<Settings />} /> */}
+          <Route path="/dashboard/settings" element={<Settings />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -16,12 +16,12 @@ const SOLPriceChart = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://api.coingecko.com/api/v3/coins/solana/market_chart?vs_currency=usd&days=7&interval=daily&x_cg_demo_api_key=CG-hug1nT2kpVQ8MMbfQDFu4NeK"
+          "https://api.coingecko.com/api/v3/coins/solana/market_chart?vs_currency=usd&days=8&interval=daily&x_cg_demo_api_key=CG-hug1nT2kpVQ8MMbfQDFu4NeK"
         );
         const result = await response.json();
 
        
-        const transformedData = result.prices.map(([timestamp, price]) => ({
+        const transformedData = result.prices?.slice(0 ,-1).map(([timestamp, price]) => ({
           date:new Date(timestamp).getDate(),
           price: parseFloat(price.toFixed(2)), 
         }));

@@ -1,8 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 
 
+
 const PreviousTokens = () => {
   return (
+    <>
+  
    <div>
      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 z-10">
       <div className="bg-[#131B2E] p-6 rounded-lg shadow-lg" style={{ opacity: 1 }}>
@@ -29,6 +32,7 @@ const PreviousTokens = () => {
       </div>
     </div>
    </div>
+   </>
   );
 };
 
