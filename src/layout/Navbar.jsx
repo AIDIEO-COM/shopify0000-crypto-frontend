@@ -6,7 +6,21 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    navigate("/");
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Logout",
+      background: "#1E2334",
+      color: "#ffffff",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/"); // Redirect to home after confirmation
+      }
+    });
   };
 
   return (
