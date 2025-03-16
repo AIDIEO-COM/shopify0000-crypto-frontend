@@ -88,7 +88,7 @@ const FloatingCrypto = () => {
         }`}
     >
       <div className={`w-[80vw] md:w-[60vw] py-2 px-2 md:px-2 rounded-md shadow-lg ${bgColor} flex items-center space-x-4 flex-nowrap`}>
-        <div className="text-center w-full sm:text-sm">
+        <div className="text-center w-full sm:text-sm text-white">
           <span className="capitalize">{currentCrypto.symbol}</span> {" "} hit {" "}
           {formatter.format(Math.floor(Math.random() * (10_000_000 - 500_000 + 1)) + 500_000)} market cap 🔥
         </div>
