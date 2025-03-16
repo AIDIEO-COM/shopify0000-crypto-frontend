@@ -67,7 +67,7 @@ const ConnectWallet = () => {
             href="https://t.me/anasfazal"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 text-white text-sm py-3 px-6 rounded-lg w-max mx-auto cursor-pointer transition-all duration-500 ease-in-out transform hover:scale-110 focus:outline-none focus:ring focus:ring-purple-300 slow-pulse hover:bg-gradient-to-r hover:from-blue-600 hover:via-purple-600 hover:to-blue-700"
+            className="bg-gradient-to-r  from-purple-600 via-blue-600 to-purple-700 text-white text-sm py-3 px-6 rounded-lg w-max mx-auto cursor-pointer transition-all duration-500 ease-in-out transform hover:scale-110 focus:outline-none focus:ring focus:ring-purple-300 slow-pulse hover:bg-gradient-to-r hover:from-blue-600 hover:via-purple-600 hover:to-blue-700 gradient-border animate-border"
           >
             Get the code to create your coins ⚡️
           </a>

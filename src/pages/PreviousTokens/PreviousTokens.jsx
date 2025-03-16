@@ -12,14 +12,14 @@ const PreviousTokens = () => {
         <div className="relative min-h-screen flex flex-col justify-between">
         
           
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+          <div className="absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
             <a
               href="https://t.me/anasfazal"
               target="_blank"
               rel="noopener noreferrer"
-              className="md:px-6 px-3 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 text-nowrap md:text-base text-sm transition flex items-center space-x-2"
+              className="md:px-6 px-3 py-3 bg-indigo-600 input-gradient-border animate-border text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 text-nowrap md:text-base text-sm transition flex items-center space-x-2"
             >
-              <span>Get your access code for the true experience!</span>
+              <span>Get the code to create your coins ⚡️</span>
             </a>
           </div>
           
