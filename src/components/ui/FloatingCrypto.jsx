@@ -83,32 +83,17 @@ const FloatingCrypto = () => {
   if (!currentCrypto) return null;
 
   return (
-    <>
-      <div
-        className={`fixed bottom-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-400 transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-          }`}
-      >
-        <div className={`w-[80vw] md:w-[50vw] py-[6px] px-2 md:px-2 flex items-center space-x-4 flex-nowrap bg-[#161B22]/90 backdrop-blur-sm border border-purple-500/20 rounded-md p-2 shadow-lg max-w-sm mx-auto text-xs`}>
-          <div className="text-center w-full sm:text-sm text-white">
-
-            <span className="capitalize">{currentCrypto.symbol}</span> {" "} hit {" "}
-            {formatter.format(Math.floor(Math.random() * (10_000_000 - 500_000 + 1)) + 500_000)} market cap 🔥
-          </div>
+    <div
+      className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-400 transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+        }`}
+    >
+      <div className={`w-[80vw] md:w-[60vw] py-2 px-2 md:px-2 rounded-md shadow-lg ${bgColor} flex items-center space-x-4 flex-nowrap`}>
+        <div className="text-center w-full sm:text-sm text-white">
+          <span className="capitalize">{currentCrypto.symbol}</span> {" "} hit {" "}
+          {formatter.format(Math.floor(Math.random() * (10_000_000 - 500_000 + 1)) + 500_000)} market cap 🔥
         </div>
       </div>
-      <div
-        className={`fixed bottom-14 left-1/2 -translate-x-1/2 z-50 transition-all duration-400 transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-          }`}
-      >
-        <div className={`w-[80vw] md:w-[50vw] py-[6px] px-2 md:px-2 flex items-center space-x-4 flex-nowrap bg-[#161B22]/90 backdrop-blur-sm border border-purple-500/20 rounded-md p-2 shadow-lg max-w-sm mx-auto text-xs`}>
-          <div className="text-center w-full sm:text-sm text-white">
-
-            <span className="capitalize">{currentCrypto.symbol}</span> {" "} rugged {" "}
-            {formatter.format(Math.floor(Math.random() * (100000)) + 500_000)}$ 🔥
-          </div>
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 
