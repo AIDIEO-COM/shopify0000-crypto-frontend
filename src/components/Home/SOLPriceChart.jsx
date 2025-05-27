@@ -16,7 +16,7 @@ const SOLPriceChart = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://api.coingecko.com/api/v3/coins/solana/market_chart?vs_currency=usd&days=8&interval=daily&x_cg_demo_api_key=CG-hug1nT2kpVQ8MMbfQDFu4NeK"
+          "https://api.coingecko.com/api/v3/coins/solana/market_chart?vs_currency=usd&days=8&interval=daily&x_cg_demo_api_key=CG-DCsQ1aXvDPbf5J2Nxce8W6mW"
         );
         const result = await response.json();
 

@@ -37,7 +37,7 @@ const FloatingCrypto = () => {
 
       try {
         const response = await fetch(
-          "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&category=solana-meme-coins"
+          "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&category=solana-meme-coins&x_cg_demo_api_key=CG-DCsQ1aXvDPbf5J2Nxce8W6mW"
         );
         const data = await response.json();
         cryptoCache.current = data;

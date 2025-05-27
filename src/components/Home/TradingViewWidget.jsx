@@ -5,6 +5,13 @@ function TradingViewWidget() {
     const widgetRef = useRef(null);
 
     useEffect(() => {
+
+        if (!widgetRef.current) return;
+
+        // Create a unique id for the widget container
+        const containerId = "tradingview-widget-container-" + Math.random().toString(36).substr(2, 9);
+        widgetRef.current.id = containerId;
+        
         // Remove any previous widget
         widgetRef.current.innerHTML = "";
 
@@ -13,7 +20,7 @@ function TradingViewWidget() {
         script.type = "text/javascript";
         script.async = true;
         script.innerHTML = JSON.stringify({
-            symbols: [["BINANCE:SOLUSDT|3M"]],
+            symbols: [["BINANCE:SOLUSDT|7D"]],
             chartOnly: false,
             width: "100%",
             height: "100%",
@@ -40,17 +47,16 @@ function TradingViewWidget() {
             lineWidth: 2,
             lineType: 0,
             dateRanges: [
-                "1w|240",
-                "3m|60",
-                "12m|1D",
-                "60m|1W"
+                "1w|240"
             ]
         });
         widgetRef.current.appendChild(script);
 
         // Cleanup on unmount
         return () => {
-            widgetRef.current.innerHTML = "";
+            if (widgetRef.current) {
+                widgetRef.current.innerHTML = "";
+            }
         };
     }, []);
 
