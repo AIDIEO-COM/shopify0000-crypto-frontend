@@ -10,7 +10,7 @@ const CryptoStats = () => {
     const fetchCryptoData = async () => {
       try {
         const response = await fetch(
-          "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&x_cg_demo_api_key=CG-hug1nT2kpVQ8MMbfQDFu4NeK"
+          "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -25,7 +25,7 @@ const CryptoStats = () => {
     };
 
     fetchCryptoData();
-    const interval = setInterval(fetchCryptoData, 5000);
+    const interval = setInterval(fetchCryptoData, 30000);
 
     return () => clearInterval(interval);
   }, []);

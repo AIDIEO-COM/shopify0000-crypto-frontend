@@ -1,7 +1,7 @@
 import CodeVerification from "@/components/Home/CodeVerification";
 import CryptoStats from "@/components/Home/CryptoStats";
 import Header from "@/components/Home/Header";
-import SOLPriceChart from "@/components/Home/SOLPriceChart";
+import TradingViewWidget from "@/components/Home/TradingViewWidget";
 
 const Home = () => {
   return (
@@ -9,8 +9,9 @@ const Home = () => {
       <section>
         <Header />
       </section>
-      <section>
-        <SOLPriceChart />
+      <section className="pb-12">
+        {/* <SOLPriceChart /> */}
+        <TradingViewWidget />
       </section>
       <section>
         <CodeVerification />

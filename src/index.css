@@ -53,27 +53,93 @@ background-color: #A78BFA !important;
 }
 
 @keyframes shake {
-  0% { transform: translateX(0); }
-  10% { transform: translateX(-5px); }
-  20% { transform: translateX(5px); }
-  30% { transform: translateX(-5px); }
-  40% { transform: translateX(5px); }
-  50% { transform: translateX(-4px); }
-  60% { transform: translateX(4px); }
-  70% { transform: translateX(-3px); }
-  80% { transform: translateX(3px); }
-  90% { transform: translateX(-2px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(-5px);
+  }
+
+  20% {
+    transform: translateX(5px);
+  }
+
+  30% {
+    transform: translateX(-5px);
+  }
+
+  40% {
+    transform: translateX(5px);
+  }
+
+  50% {
+    transform: translateX(-4px);
+  }
+
+  60% {
+    transform: translateX(4px);
+  }
+
+  70% {
+    transform: translateX(-3px);
+  }
+
+  80% {
+    transform: translateX(3px);
+  }
+
+  90% {
+    transform: translateX(-2px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .animate-shake {
-  animation: shake 1s ease-in-out; /* Increased duration from 0.3s to 1s */
+  animation: shake 1s ease-in-out;
+  /* Increased duration from 0.3s to 1s */
 }
 
 .input-gradient-border {
   display: block;
   width: 100%;
   padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #e2e8f0;
+  /* Light gray text for contrast */
+  background: #0f172a;
+  /* Dark blue-gray background */
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+
+  background-image: linear-gradient(#0f172a, #0f172a),
+    /* Solid background */
+    conic-gradient(from var(--border-angle, 0deg),
+      rgba(128, 0, 128, 0.4) 80%,
+      /* Lighter purple */
+      #8b5cf6 86%,
+      /* Vibrant purple */
+      #9333ea 90%,
+      /* Deep violet */
+      #8b5cf6 94%,
+      /* Vibrant purple */
+      rgba(128, 0, 128, 0.4)
+      /* Lighter purple */
+    );
+
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.input-gradient-border-new {
+  display: block;
+  width: 100%;
+
   font-size: 1rem;
   color: #e2e8f0;
   /* Light gray text for contrast */

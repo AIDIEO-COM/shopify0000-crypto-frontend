@@ -32,7 +32,7 @@ const SOLPriceChart = () => {
       }
     };
 
-    fetchData();
+    // fetchData();
   }, []);
 
   // Find min & max price for dynamic Y-axis
