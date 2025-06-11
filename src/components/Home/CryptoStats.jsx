@@ -9,14 +9,24 @@ const CryptoStats = () => {
   useEffect(() => {
     const fetchCryptoData = async () => {
       try {
+        // Fetch current price and 24h stats
         const response = await fetch(
-          "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&x_cg_demo_api_key=CG-DCsQ1aXvDPbf5J2Nxce8W6mW"
+          "https://api.binance.com/api/v3/ticker/24hr?symbol=SOLUSDT"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
         const data = await response.json();
-        setCryptoData(data.solana);
+        
+        // Format the data to match our component's needs
+        const formattedData = {
+          usd: parseFloat(data.lastPrice),
+          usd_market_cap: parseFloat(data.quoteVolume) * parseFloat(data.lastPrice),
+          usd_24h_vol: parseFloat(data.volume) * parseFloat(data.lastPrice),
+          usd_24h_change: parseFloat(data.priceChangePercent)
+        };
+        
+        setCryptoData(formattedData);
       } catch (error) {
         setError(error.message);
       } finally {
