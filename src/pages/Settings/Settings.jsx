@@ -14,10 +14,15 @@ const Settings = () => {
   const [solAmount, setSolAmount] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [walletConnectLoading, setWalletConnectLoading] = useState(false);
 
   const handleWalletClick = (wallet) => {
-    setIsConnectWallet(false);
-    setErrorMessage(`Access Denied: Upgrade Required!`);
+    setWalletConnectLoading(true);
+    setTimeout(() => {
+      setWalletConnectLoading(false);
+      setIsConnectWallet(false);
+      setErrorMessage(`Access Denied: Upgrade Required!`);
+    }, 1500);
   };
 
   // console.log(isDarkMode);
@@ -127,10 +132,16 @@ const Settings = () => {
                           />
                         </button>
                         <button
-                          className="w-full cursor-pointer p-3 rounded-lg bg-red-500/10 text-red-500 hover:bg-red-500/20 transition-colors duration-200"
+                          className="w-full cursor-pointer p-3 rounded-lg bg-red-500/10 text-red-500 hover:bg-red-500/20 transition-colors duration-200 flex items-center justify-center"
                           onClick={() => setIsConnectWallet(false)}
                         >
-                          Cancel
+                          {
+                            walletConnectLoading ? (
+                              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                            ) : (
+                              <span>Cancel</span>
+                            )
+                          }
                         </button>
                       </div>
                     </div>

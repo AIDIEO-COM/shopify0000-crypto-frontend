@@ -50,7 +50,7 @@ const CryptoStats = () => {
       setIsLoading(false);
       window.open("https://t.me/anasfazal", "_blank");
 
-    }, 2000);
+    }, 1500);
   }
 
   return (
@@ -135,9 +135,8 @@ const CryptoStats = () => {
       </div>
       {/* button */}
       <div className=" flex justify-center my-12">
-        <a
+        <button
           onClick={handleGetCode}
-          rel="noopener noreferrer"
           className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 text-white text-sm py-3 px-6 rounded-lg w-max mx-auto cursor-pointer transition-all duration-500 ease-in-out transform hover:scale-110 focus:outline-none focus:ring focus:ring-purple-300 slow-pulse hover:bg-gradient-to-r hover:from-blue-600 hover:via-purple-600 hover:to-blue-700 min-w-40 flex items-center justify-center"
         >
           {isLoading ? (
@@ -145,7 +144,7 @@ const CryptoStats = () => {
           ) : (
             <span>Get Your Code</span>
           )}
-        </a>
+        </button>
       </div>
     </>
   );
