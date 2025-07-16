@@ -1,13 +1,15 @@
 import BgAnimation from "@/components/ui/BgAnimation";
-import  { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
 const CreateToken = () => {
   const [imagePreview, setImagePreview] = useState(null);
   const navigate = useNavigate()
-  const [error,setError] = useState('')
- 
+  const [error, setError] = useState('')
+
+  const [isLoading, setIsLoading] = useState(false);
+
 
   // Handle image file selection and create a preview
   const handleImageChange = (e) => {
@@ -31,12 +33,16 @@ const CreateToken = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(!imagePreview){
+    if (!imagePreview) {
       setError('Please upload an image')
       return
     }
-    navigate('/dashboard/create-token/connect-wallet')
-   
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      navigate('/dashboard/create-token/connect-wallet')
+    }, 2000);
+
   }
 
   return (
@@ -49,7 +55,7 @@ const CreateToken = () => {
         >
           <div className="max-w-2xl mx-auto">
             <form
-             onSubmit={handleSubmit}
+              onSubmit={handleSubmit}
               className="space-y-6 bg-[#0A0F1E] rounded-2xl p-8 border border-[#1E2334]"
               style={{ opacity: 1, transform: "none" }}
             >
@@ -110,7 +116,7 @@ const CreateToken = () => {
                     className="w-full px-4 py-2 bg-[#131B2E] border border-[#1E2334] rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
                     rows="3"
                     placeholder="Describe your token..."
-              
+
                   ></textarea>
                 </div>
                 <div>
@@ -125,7 +131,7 @@ const CreateToken = () => {
                     accept="image/*"
                     className="hidden"
                     onChange={handleImageChange}
-            
+
                   />
                   <div
                     className="w-full h-40 bg-[#131B2E] border border-dashed border-[#1E2334] rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-[#1A2235] transition-colors relative"
@@ -176,11 +182,15 @@ const CreateToken = () => {
                 </div>
               </div>
               <button
-              type="submit"
-                
-                className="w-full cursor-pointer py-3 px-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:from-purple-600 hover:to-pink-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                type="submit"
+
+                className="w-full cursor-pointer py-3 px-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:from-purple-600 hover:to-pink-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed  flex items-center justify-center"
               >
-                Create Token
+                {isLoading ? (
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                ) : (
+                  <span>Create Token</span>
+                )}
               </button>
             </form>
           </div>
@@ -190,7 +200,7 @@ const CreateToken = () => {
   );
 };
 
-export default CreateToken; 
+export default CreateToken;
 
 
 

@@ -13,6 +13,16 @@ const ConnectWallet = () => {
     // setTimeout(() => setErrorMessage(""), 400);
   };
 
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleConnectWallet = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      setIsModalOpen(true);
+    }, 2000);
+  }
+
   return (
     <div>
       <BgAnimation />
@@ -26,8 +36,9 @@ const ConnectWallet = () => {
               <div className="relative">
                 <button
                   className="flex cursor-pointer items-center space-x-2 px-4 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white hover:from-fuchsia-700 hover:to-pink-700 transition-all duration-200"
-                  onClick={() => setIsModalOpen(true)}
-                >
+                    onClick={handleConnectWallet}
+                  >
+                  
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -44,7 +55,13 @@ const ConnectWallet = () => {
                     <path d="M3 5v14a2 2 0 0 0 2 2h16v-5" />
                     <path d="M18 12a2 2 0 0 0 0 4h4v-4Z" />
                   </svg>
-                  <span>Connect Wallet</span>
+                  {
+                    isLoading ? (
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    ) : (
+                      <span>Connect Wallet</span>
+                    )
+                  }
                 </button>
                 {errorMessage && (
                   <div className="absolute top-full left-0 right-0 mt-2 p-3 bg-red-500/10 border border-red-500/20 rounded-lg animate-shake">

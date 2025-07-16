@@ -5,6 +5,7 @@ const CryptoStats = () => {
   const [cryptoData, setCryptoData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchCryptoData = async () => {
@@ -42,6 +43,15 @@ const CryptoStats = () => {
 
   if (loading) return <p className="text-white">Loading...</p>;
   if (error) return <p className="text-red-400">Error: {error}</p>;
+
+  const handleGetCode = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      window.open("https://t.me/anasfazal", "_blank");
+
+    }, 2000);
+  }
 
   return (
     <>
@@ -126,12 +136,15 @@ const CryptoStats = () => {
       {/* button */}
       <div className=" flex justify-center my-12">
         <a
-          href="https://t.me/anasfazal"
-          target="_blank"
+          onClick={handleGetCode}
           rel="noopener noreferrer"
-          className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 text-white text-sm py-3 px-6 rounded-lg w-max mx-auto cursor-pointer transition-all duration-500 ease-in-out transform hover:scale-110 focus:outline-none focus:ring focus:ring-purple-300 slow-pulse hover:bg-gradient-to-r hover:from-blue-600 hover:via-purple-600 hover:to-blue-700"
+          className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 text-white text-sm py-3 px-6 rounded-lg w-max mx-auto cursor-pointer transition-all duration-500 ease-in-out transform hover:scale-110 focus:outline-none focus:ring focus:ring-purple-300 slow-pulse hover:bg-gradient-to-r hover:from-blue-600 hover:via-purple-600 hover:to-blue-700 min-w-40 flex items-center justify-center"
         >
-          Get Your Code
+          {isLoading ? (
+            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+          ) : (
+            <span>Get Your Code</span>
+          )}
         </a>
       </div>
     </>
