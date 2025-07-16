@@ -48,7 +48,7 @@ const CryptoStats = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      window.open("https://t.me/anasfazal", "_blank");
+      window.open("https://t.me/anasfazal");
 
     }, 1500);
   }
